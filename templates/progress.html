@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Progress • Mind Mend{% endblock %}
+
+{% block content %}
+<section class="flex flex-col items-center justify-center px-4 py-12 space-y-6">
+  <h1 class="text-3xl md:text-4xl font-bold text-blue-500 dark:text-blue-300 text-center">🌱 Your Mindful Progress</h1>
+  <p class="text-gray-600 dark:text-gray-300 max-w-md text-center">
+    Healing isn’t linear — progress comes in waves 🌊
+  </p>
+
+  <!-- Progress Cards -->
+  <div class="grid gap-6 mt-6 w-full max-w-md">
+    <!-- Focus Level -->
+    <div class="p-5 bg-blue-100 dark:bg-blue-900/30 rounded-2xl shadow-md">
+      <h2 class="font-semibold text-gray-700 dark:text-gray-200 mb-2">Focus Level</h2>
+      <div class="w-full bg-gray-300 dark:bg-gray-700 h-4 rounded-full overflow-hidden">
+        <div class="bg-blue-500 h-full rounded-full transition-all duration-700" style="width: 78%;"></div>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">You stayed focused for 78% of your sessions ✨</p>
+    </div>
+
+    <!-- Calm Balance -->
+    <div class="p-5 bg-green-100 dark:bg-green-900/30 rounded-2xl shadow-md">
+      <h2 class="font-semibold text-gray-700 dark:text-gray-200 mb-2">Calm Balance</h2>
+      <div class="w-full bg-gray-300 dark:bg-gray-700 h-4 rounded-full overflow-hidden">
+        <div class="bg-green-500 h-full rounded-full transition-all duration-700" style="width: 65%;"></div>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">You’ve kept your calm 65% of the time 🌿</p>
+    </div>
+
+    <!-- Mood Stability -->
+    <div class="p-5 bg-pink-100 dark:bg-pink-900/30 rounded-2xl shadow-md">
+      <h2 class="font-semibold text-gray-700 dark:text-gray-200 mb-2">Mood Stability</h2>
+      <div class="w-full bg-gray-300 dark:bg-gray-700 h-4 rounded-full overflow-hidden">
+        <div class="bg-pink-500 h-full rounded-full transition-all duration-700" style="width: 84%;"></div>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">You’ve kept a positive mindset 84% of this week 💗</p>
+    </div>
+
+    <!-- Self-care Consistency -->
+    <div class="p-5 bg-purple-100 dark:bg-purple-900/30 rounded-2xl shadow-md">
+      <h2 class="font-semibold text-gray-700 dark:text-gray-200 mb-2">Self-care Consistency</h2>
+      <div class="w-full bg-gray-300 dark:bg-gray-700 h-4 rounded-full overflow-hidden">
+        <div class="bg-purple-500 h-full rounded-full transition-all duration-700" style="width: 91%;"></div>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">You’ve been gentle with yourself 91% of the time 🌸</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

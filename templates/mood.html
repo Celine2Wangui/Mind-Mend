@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Mood Tracker • Mind Mend{% endblock %}
+
+{% block content %}
+<section class="flex flex-col items-center justify-center text-center px-4 py-12 space-y-6">
+  <h1 class="text-3xl md:text-4xl font-bold text-pink-500 dark:text-pink-300">💫 Mood Tracker</h1>
+  <p class="text-gray-600 dark:text-gray-300 max-w-md">How are you feeling today?</p>
+
+  <!-- Mood Buttons -->
+  <div id="mood-options" class="flex flex-wrap justify-center gap-4 mt-4">
+    <button class="mood-btn text-5xl px-4 py-2 hover:scale-125 transition rounded-xl bg-white/60 dark:bg-gray-800/40 shadow-md">😊</button>
+    <button class="mood-btn text-5xl px-4 py-2 hover:scale-125 transition rounded-xl bg-white/60 dark:bg-gray-800/40 shadow-md">😔</button>
+    <button class="mood-btn text-5xl px-4 py-2 hover:scale-125 transition rounded-xl bg-white/60 dark:bg-gray-800/40 shadow-md">😤</button>
+    <button class="mood-btn text-5xl px-4 py-2 hover:scale-125 transition rounded-xl bg-white/60 dark:bg-gray-800/40 shadow-md">😌</button>
+    <button class="mood-btn text-5xl px-4 py-2 hover:scale-125 transition rounded-xl bg-white/60 dark:bg-gray-800/40 shadow-md">😴</button>
+  </div>
+
+  <!-- Mood Message -->
+  <p id="mood-message" class="text-lg font-medium text-gray-700 dark:text-gray-200 mt-4 opacity-0"></p>
+</section>
+
+<script>
+const moodButtons = document.querySelectorAll('.mood-btn');
+const message = document.getElementById('mood-message');
+
+const moodResponses = {
+  '😊': "You're glowing today! Keep that smile on 🌞",
+  '😔': "Hey... it's okay to feel low sometimes 💙 Take it slow.",
+  '😤': "Deep breath. You’ve got this 💪",
+  '😌': "Peaceful vibes only 🕊️",
+  '😴': "Rest is productive too 😴"
+};
+
+moodButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const mood = btn.textContent.trim();
+    message.textContent = moodResponses[mood] || "";
+    message.classList.remove('animate-bounceIn');
+    void message.offsetWidth; // reset animation
+    message.classList.add('animate-bounceIn');
+    message.classList.remove('opacity-0');
+  });
+});
+</script>
+
+<style>
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-bounceIn { animation: bounceIn 0.5s ease forwards; }
+</style>
+{% endblock %}

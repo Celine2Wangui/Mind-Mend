@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Daily Affirmations • Mind Mend{% endblock %}
+
+{% block content %}
+<section class="flex flex-col items-center justify-center text-center px-4 py-12 space-y-6">
+  <h1 class="text-3xl md:text-4xl font-bold text-purple-500 dark:text-purple-300">🌸 Daily Affirmations</h1>
+  <p class="text-gray-600 dark:text-gray-300 max-w-md">
+    Click below to get a fresh dose of positive energy 💫
+  </p>
+
+  <!-- Affirmation Card -->
+  <div class="p-6 rounded-2xl bg-pink-100 dark:bg-pink-900/30 shadow-md w-full max-w-md">
+    <p id="affirmation-text" class="text-lg text-gray-800 dark:text-gray-200 font-medium transition-all duration-500">
+      “You are allowed to rest. You are allowed to grow at your own pace.” 🌿
+    </p>
+  </div>
+
+  <button id="new-affirmation" class="px-4 py-2 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full shadow hover:scale-105 transition">
+    💖 New Affirmation
+  </button>
+</section>
+
+<script>
+const affirmations = [
+  "You are doing better than you think 🌷",
+  "You are enough, right now, as you are ✨",
+  "Resting isn’t lazy — it’s healing 🌿",
+  "Small steps still move you forward 🌙",
+  "You deserve calm, not chaos 💗",
+  "Your peace matters more than their approval 🌸",
+  "Even slow growth is growth 🌼",
+  "You are safe, loved, and growing 💞",
+  "Healing isn’t linear — and that’s okay 🌤️"
+];
+
+const text = document.getElementById('affirmation-text');
+const button = document.getElementById('new-affirmation');
+
+button.addEventListener('click', () => {
+  const random = Math.floor(Math.random() * affirmations.length);
+  text.style.opacity = 0;
+  setTimeout(() => {
+    text.textContent = affirmations[random];
+    text.style.opacity = 1;
+  }, 300);
+});
+</script>
+{% endblock %}
