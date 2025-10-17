@@ -14,17 +14,17 @@ QUOTES = [
 
 # --- ROUTES ---
 @app.route('/')
-def home():
+def index():
     quote = random.choice(QUOTES)
     return render_template('index.html', quote=quote)
-
-@app.route('/mood')
-def mood():
-    return render_template('mood.html')
 
 @app.route('/focus')
 def focus():
     return render_template('focus.html')
+
+@app.route('/mood')
+def mood():
+    return render_template('mood.html')
 
 @app.route('/affirmations')
 def affirmations():
@@ -34,6 +34,5 @@ def affirmations():
 def progress():
     return render_template('progress.html')
 
-# --- RUN SERVER ---
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
